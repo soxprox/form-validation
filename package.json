@@ -39,6 +39,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@testing-library/user-event": "^13.5.0"
+    "@testing-library/user-event": "^13.5.0",
+    "npm-cli-login": "^1.0.0"
   }
 }

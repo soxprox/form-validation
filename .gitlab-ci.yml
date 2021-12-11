@@ -1,5 +1,6 @@
 stages:
   - test
+  - publish
 
 test:
   image: node:15.0
@@ -9,3 +10,14 @@ test:
   script:
     - npm install
     - npm run test
+
+publish:
+  image: node:15.0
+  tags:
+    - docker
+  stage: publish
+  script:
+    - npm run package
+    - cd package
+    - NPM_USER=$NPM_USERNAME NPM_PASS=$NPM_PASSWORD NPM_EMAIL=$NPM_EMAIL npm-cli-login
+    - npm publish --access public
