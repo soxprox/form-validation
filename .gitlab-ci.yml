@@ -15,9 +15,13 @@ publish:
   image: node:15.0
   tags:
     - docker
+  only:
+    - branches
+      - main
   stage: publish
   script:
     - npm install
+    - npm i -g npm-cli-login
     - npm run package
     - cd package
     - NPM_USER=$NPM_USERNAME NPM_PASS=$NPM_PASSWORD NPM_EMAIL=$NPM_EMAIL npm-cli-login
