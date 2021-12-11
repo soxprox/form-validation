@@ -1,0 +1,11 @@
+stages:
+  - test
+
+test:
+  image: node:15.0
+  tags:
+    - docker
+  stage: test
+  script:
+    - npm install
+    - npm run test
