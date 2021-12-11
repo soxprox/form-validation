@@ -17,6 +17,7 @@ publish:
     - docker
   stage: publish
   script:
+    - npm install
     - npm run package
     - cd package
     - NPM_USER=$NPM_USERNAME NPM_PASS=$NPM_PASSWORD NPM_EMAIL=$NPM_EMAIL npm-cli-login
