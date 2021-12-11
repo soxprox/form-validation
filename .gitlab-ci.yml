@@ -1,6 +1,6 @@
 stages:
-  -install
-  -test
+  - install
+  - test
 
 install:
   stage: install
