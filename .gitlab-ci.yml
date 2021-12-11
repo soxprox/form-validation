@@ -16,8 +16,7 @@ publish:
   tags:
     - docker
   only:
-    - branches
-      - main
+    - main
   stage: publish
   script:
     - npm install
