@@ -12,7 +12,8 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "test": "jest",
     "test:watch": "npm run test -- --watchAll",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "release": "standard-version"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
@@ -28,6 +29,7 @@
     "jest": "^27.4.4",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
+    "standard-version": "^9.3.2",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
     "svelte-jester": "^2.1.5",
