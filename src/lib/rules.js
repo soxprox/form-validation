@@ -1,4 +1,4 @@
-const rules = {
+export const validationRules = {
   notEmpty(value, args) {
     return !!value.trim();
   },
@@ -24,5 +24,3 @@ const rules = {
     return true;
   }
 }
-
-export default rules;

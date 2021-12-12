@@ -1,4 +1,4 @@
-import validationRules from './rules';
+import { validationRules } from './rules';
 export const validate = (data, dataRules) => {
   return new Promise((resolve, reject) => {
     const errors = {};
