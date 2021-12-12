@@ -78,9 +78,11 @@ Checks that the data property evaluates to true
 
 ### **notEqual|`string`**
 
-### **inArray|`string`,`string`,`string`....**
+### **inArray|`value`,`value`,`value`....**
+The array to validate against will be built up from the values supplied. Each value should be separated by a `,` (comma).
 
-### **notInArray|`string`,`string`,`string`....**
+### **notInArray|`value`,`value`,`value`....**
+The array to validate against will be built up from the values supplied. Each value should be separated by a `,` (comma).
 
 ### **inRegex|`regular expression`**
 The regular expression **should not** be surrounded with `/`
