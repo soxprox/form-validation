@@ -22,5 +22,12 @@ export const validationRules = {
       return false;
     }
     return true;
+  },
+
+  lengthBetween(value, args) { 
+    if (value.length >= args[1] && value.length <= args[2]) {
+      return true;
+    }
+    return false
   }
 }

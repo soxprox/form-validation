@@ -194,4 +194,40 @@ describe('text inputs', () => {
 		expect(response.name.length).toBe(0);
 	});
 
+	it('it returns error if length is not between two values', async () => {
+		const data = {
+			name: 'test1'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'lengthBetween|6|8',
+						message: 'The name field should be between 5 and 8 characters long'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('The name field should be between 5 and 8 characters long');
+	});
+
+		it('it returns no error if length is between two values', async () => {
+			const data = {
+				name: 'test12'
+			};
+			const dataRules = {
+				name: {
+					rules: [
+						{
+							validate: 'lengthBetween|6|8',
+							message: 'The name field should be between 5 and 8 characters long'
+						}
+					]
+				}
+			};
+			const response = await validate(data, dataRules);
+			expect(response.name.length).toBe(0);
+		});
+
 })

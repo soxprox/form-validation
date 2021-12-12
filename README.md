@@ -71,3 +71,5 @@ Checks that the data property evaluates to true
 ### **maxLength|`int`**
 
 ### **length|`int`**
+
+### **lengthBetween|`int`|`int`**
