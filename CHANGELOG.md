@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.4.0...v1.4.1) (2021-12-12)
+
 ## [1.4.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.3.0...v1.4.0) (2021-12-12)
 
 
