@@ -62,5 +62,9 @@ export const validationRules = {
   inRegex(value, args) {
     const regex = new RegExp(args[1]);
     return regex.test(value)
+  },
+  notInRegex(value, args) {
+    const regex = new RegExp(args[1]);
+    return !regex.test(value)
   }
 }
