@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.2.0...v1.3.0) (2021-12-12)
+
+
+### Features
+
+* added rule checking for inArray ([95844ed](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/95844ed9a3e046d4316aec6d8655cec90bab7095))
+
 ## [1.2.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.0.2...v1.2.0) (2021-12-12)
 
 
