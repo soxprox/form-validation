@@ -58,5 +58,9 @@ export const validationRules = {
       return true;
     }
     return false;
+  },
+  inRegex(value, args) {
+    const regex = new RegExp(args[1]);
+    return regex.test(value)
   }
 }

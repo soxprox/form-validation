@@ -376,4 +376,40 @@ describe('text inputs', () => {
 		expect(response.name.length).toBe(0);
 	});
 
+	it('it returns error if value is matched in regex', async () => {
+		const data = {
+			name: 'me-at-me.com'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'inRegex|.?@.?',
+						message: 'Name should include a @ sign'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('Name should include a @ sign');
+	});
+
+	it('it returns no error if value is matched in regex', async () => {
+		const data = {
+			name: 'me@me.com'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'inRegex|.?@.?',
+						message: 'Name should include a @ sign'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
+
 })

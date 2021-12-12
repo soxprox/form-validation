@@ -81,3 +81,14 @@ Checks that the data property evaluates to true
 ### **inArray|`string`,`string`,`string`....**
 
 ### **notInArray|`string`,`string`,`string`....**
+
+### **inRegex|`regular expression`**
+The regular expression should not be surrounded with `/`
+
+**Example**
+
+The following will validate that me@me.com contains an `@` symbol
+
+```
+inRegex|.?@.?
+```
