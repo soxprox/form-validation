@@ -337,5 +337,43 @@ describe('text inputs', () => {
 			const response = await validate(data, dataRules);
 			expect(response.name.length).toBe(0);
 		});
+	
+	it('it returns error if value is in the array', async () => {
+		const data = {
+			name: 'test1'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'notInArray|test1,test2,test3,test4',
+						message: 'Name should not be one of the following values: test1, test2, test3, test4'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe(
+			'Name should not be one of the following values: test1, test2, test3, test4'
+		);
+	});
+
+	it('it returns no error if name is not in the array', async () => {
+		const data = {
+			name: 'test4'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'notInArray|test1,test2,test3',
+						message: 'Name should not be one of the following values: test1, test2, test3, test4'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
 
 })

@@ -79,3 +79,5 @@ Checks that the data property evaluates to true
 ### **notEqual|`string`**
 
 ### **inArray|`string`,`string`,`string`....**
+
+### **notInArray|`string`,`string`,`string`....**
