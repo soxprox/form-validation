@@ -86,6 +86,112 @@ describe('text inputs', () => {
     const response = await validate(data, dataRules);
     expect(response.firstName[0]).toBe('The first name field is required');
     expect(response.lastName[0]).toBe('The last name field should be empty');
+  });
+  
+  it('it returns an error if maxlength is exceeded', async () => {
+		const data = {
+			name: 'test data'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'maxLength|5',
+						message: 'The name field must be no longer than 5 characters'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('The name field must be no longer than 5 characters');
+  });
+  it('it returns no error if maxlength is not exceeded', async () => {
+		const data = {
+			name: 'test'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'maxLength|5',
+						message: 'The name field must be no longer than 5 characters'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+  });
+  
+  it('it returns an error if data is less than minLength', async () => {
+		const data = {
+			name: 'test'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'minLength|5',
+						message: 'The name field must be 5 characters or longer'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('The name field must be 5 characters or longer');
+	});
+	it('it returns no error if data is >= to minLength', async () => {
+		const data = {
+			name: 'test1'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'minLength|5',
+						message: 'The name field must be no longer than 5 characters'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+  });
+  
+  it('it returns an error if data length is not equal to length', async () => {
+		const data = {
+			name: 'test'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'length|5',
+						message: 'The name field must be 5 characters long'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('The name field must be 5 characters long');
+  });
+  
+  it('it returns no error if data length is equal to length', async () => {
+		const data = {
+			name: 'test1'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'length|5',
+						message: 'The name field must be 5 characters long'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
 	});
 
 })

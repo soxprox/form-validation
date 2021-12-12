@@ -8,7 +8,10 @@ export const validate = (data, dataRules) => {
       errors[field] = [];
       
       for (const rule in rules) {
-        const result = validationRules[rules[rule]['validate']](data[field]);
+        //First element of funcArgs will be the function name to call
+        //The remaining will be arguments to pass to the function
+        const funcArgs = rules[rule]['validate'].split('|');
+        const result = validationRules[funcArgs[0]](data[field], funcArgs);
         if (!result) {
           errors[field].push(rules[rule]['message']);
         }
