@@ -43,5 +43,12 @@ export const validationRules = {
       return true;
     }
     return false;
+  },
+  inArray(value, args) {
+    const arrayValues = args[1].split(',');
+    if (arrayValues.indexOf(value) > -1) {
+      return true;
+    }
+    return false;
   }
 }
