@@ -29,5 +29,19 @@ export const validationRules = {
       return true;
     }
     return false
+  },
+
+  equal(value, args) { 
+    if (value == args[1]) {
+      return true;
+    }
+    return false
+  },
+
+  notEqual(value, args) {
+    if (value != args[1]) { 
+      return true;
+    }
+    return false;
   }
 }

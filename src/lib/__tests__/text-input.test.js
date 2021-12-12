@@ -230,4 +230,77 @@ describe('text inputs', () => {
 			expect(response.name.length).toBe(0);
 		});
 
+		it('it returns error if value is not equal', async () => {
+			const data = {
+				name: 'test1'
+			};
+			const dataRules = {
+				name: {
+					rules: [
+						{
+							validate: 'equal|test2',
+							message: 'The value of name should be equal to test2'
+						}
+					]
+				}
+			};
+			const response = await validate(data, dataRules);
+			expect(response.name[0]).toBe('The value of name should be equal to test2');
+		});
+
+		it('it returns no error if the value is equal', async () => {
+			const data = {
+				name: 'test2'
+			};
+			const dataRules = {
+				name: {
+					rules: [
+						{
+							validate: 'equal|test2',
+							message: 'The value of name should be equal to test2'
+						}
+					]
+				}
+			};
+			const response = await validate(data, dataRules);
+			expect(response.name.length).toBe(0);
+		});
+
+		it('it returns error if value is equal', async () => {
+			const data = {
+				name: 'test1'
+			};
+			const dataRules = {
+				name: {
+					rules: [
+						{
+							validate: 'notEqual|test1',
+							message: 'The value of name should not equal test1'
+						}
+					]
+				}
+			};
+			const response = await validate(data, dataRules);
+			expect(response.name[0]).toBe('The value of name should not equal test1');
+		});
+
+		it('it returns no error if the value is not equal', async () => {
+			const data = {
+				name: 'test2'
+			};
+			const dataRules = {
+				name: {
+					rules: [
+						{
+							validate: 'notEqual|test1',
+							message: 'The value of name should not equal test1'
+						}
+					]
+				}
+			};
+			const response = await validate(data, dataRules);
+			expect(response.name.length).toBe(0);
+		});
+
+
 })

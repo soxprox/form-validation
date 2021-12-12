@@ -73,3 +73,7 @@ Checks that the data property evaluates to true
 ### **length|`int`**
 
 ### **lengthBetween|`int`|`int`**
+
+### **equal|`string`**
+
+### **notEqual|`string`**
