@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.4.1...v1.5.0) (2021-12-13)
+
+
+### Features
+
+* add rule containsWords ([34213e6](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/34213e61a936e1e5eef76cada1c49344ef574060))
+* add rule doesNotIncludeWords ([9cc2705](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/9cc2705b5ce75e7d04201ec3460676ba596ea7f3))
+
 ### [1.4.1](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.4.0...v1.4.1) (2021-12-12)
 
 ## [1.4.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.3.0...v1.4.0) (2021-12-12)
