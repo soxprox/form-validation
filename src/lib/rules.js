@@ -76,5 +76,15 @@ export const validationRules = {
       }
     });
     return !errors;
+  },
+  doesNotIncludeWords(value, args) {
+    let errors = false;
+    const arrayValues = args[1].split(',');
+    arrayValues.forEach(word => {
+      if (value.toLowerCase().includes(word.toLowerCase())) {
+        errors = true;
+      }
+    });
+    return !errors;
   }
 }

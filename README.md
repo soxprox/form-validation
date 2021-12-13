@@ -101,3 +101,7 @@ The regular expression **should not** be surrounded with `/`
 Validates that the value is **not** matched by the regular expression
 
 ### **includesAllWords|`string`,`string`...**
+Returns an error if the value does not include all the words in the array
+
+### **doesNotIncludeWords|`string`,`string`...**
+Return an error if the value includes any of the words in the array
