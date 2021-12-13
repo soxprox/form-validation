@@ -1,6 +1,6 @@
 # form-validation
 
-This library provides an easy way to validate your javascript and NodeJS applications. It's not only for form data, you can use it to validate any data.
+This library provides an easy way to validate your javascript applications.
 
 
 ## Installation
@@ -99,3 +99,5 @@ inRegex|.?@.?
 The regular expression **should not** be surrounded with `/`
 
 Validates that the value is **not** matched by the regular expression
+
+### **includesAllWords|`string`,`string`...**

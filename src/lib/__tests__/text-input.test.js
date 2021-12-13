@@ -448,4 +448,40 @@ describe('text inputs', () => {
 		expect(response.name.length).toBe(0);
 	});
 
+	it('it returns error if value does not include words', async () => {
+		const data = {
+			name: 'Mary had a little lamb'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'includesAllWords|dell,rodney',
+						message: 'Name should include words: Dell, Rodney'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('Name should include words: Dell, Rodney');
+	});
+
+	it('it returns no error if value does include words', async () => {
+		const data = {
+			name: 'Dell had a brother called Rodney'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'includesAllWords|dell,rodney',
+						message: 'Name should include words: Dell, Rodney'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
+
 })

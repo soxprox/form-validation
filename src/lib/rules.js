@@ -66,5 +66,15 @@ export const validationRules = {
   notInRegex(value, args) {
     const regex = new RegExp(args[1]);
     return !regex.test(value)
+  },
+  includesAllWords(value, args) {
+    let errors = false;
+    const arrayValues = args[1].split(',');
+    arrayValues.forEach(word => {
+      if (!value.toLowerCase().includes(word.toLowerCase())) {
+        errors = true;
+      }
+    });
+    return !errors;
   }
 }
