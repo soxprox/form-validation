@@ -25,3 +25,4 @@ publish:
     - cd package
     - NPM_USER=$NPM_USERNAME NPM_PASS=$NPM_PASSWORD NPM_EMAIL=$NPM_EMAIL npm-cli-login
     - npm publish --access public
+    - git push https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/soxprox/form-validation.git
