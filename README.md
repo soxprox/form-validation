@@ -48,7 +48,7 @@ If the data passed the rules, then the array will be empty
 ```
 If the length of the array is `0`, all the rules passed.
 
-## Supported rules are
+## String validation
 ### **empty**
 
 Checks that the the data property evaluates to false.
@@ -106,6 +106,8 @@ Returns an error if the value does not include all the words in the array
 ### **doesNotIncludeWords|`string`,`string`...**
 Return an error if the value includes any of the words in the array
 
+## URL and Email validation
+
 ### **isValidURL**
 Checks that the URL is valid using the following regex
 
@@ -125,3 +127,14 @@ The following `would not` validate as a correct email address
 ```
 name@domain
 ```
+
+## Numeric Validation
+
+### **isNumber**
+Checks that the value passed in is a valid number
+
+### **isLessThan|`number`**
+Checks that the value is less than the number provided in the parameter
+
+### **isGreaterThan|`number`**
+Checks that the value is greater than the number provided in the parameter
