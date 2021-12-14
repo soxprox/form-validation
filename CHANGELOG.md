@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.0...v1.7.1) (2021-12-14)
+
+
+### Bug Fixes
+
+* add more frontend tests ([9671de9](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/9671de9ae65cc481c654dcd1bcb94eb902c933b8))
+
 ## [1.7.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.6.0...v1.7.0) (2021-12-14)
 
 
