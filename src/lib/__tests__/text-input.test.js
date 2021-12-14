@@ -528,7 +528,7 @@ describe('text inputs', () => {
 			name: {
 				rules: [
 					{
-						validate: 'isValidURL',
+						validate: 'url',
 						message: 'Name should be a valid URL'
 					}
 				]
@@ -546,7 +546,7 @@ describe('text inputs', () => {
 			name: {
 				rules: [
 					{
-						validate: 'isValidURL',
+						validate: 'url',
 						message: 'Name should be a valid URL'
 					}
 				]
@@ -563,7 +563,7 @@ describe('text inputs', () => {
 			name: {
 				rules: [
 					{
-						validate: 'isValidEmail',
+						validate: 'email',
 						message: 'Name should be a valid Email Address'
 					}
 				]
@@ -581,7 +581,7 @@ describe('text inputs', () => {
 			name: {
 				rules: [
 					{
-						validate: 'isValidEmail',
+						validate: 'email',
 						message: 'Name should be a valid Email Address'
 					}
 				]

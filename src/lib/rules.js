@@ -1,8 +1,8 @@
 export const validationRules = {
-	notEmpty(value, args) {
+	notEmpty(value) {
 		return !!value.trim();
 	},
-	empty(value, args) {
+	empty(value) {
 		return !value.trim();
 	},
 	maxLength(value, args) {
@@ -87,24 +87,24 @@ export const validationRules = {
 		});
 		return !errors;
 	},
-	isValidURL(value) {
+	url(value) {
 		const regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/;
 		return regex.test(value);
 	},
-	isValidEmail(value) {
+	email(value) {
 		const regex =
 			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return regex.test(value);
 	},
 
 	// Numeric rules
-	isNumeric(value) {
+	numeric(value) {
 		return !isNaN(value);
 	},
-	isLessThan(value, args) {
+	lessThan(value, args) {
 		return value < args[1];
 	},
-	isGreaterThan(value, args) {
+	greaterThan(value, args) {
 		return value > args[1];
 	}
 };

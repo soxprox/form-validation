@@ -15,7 +15,7 @@ describe('numeric inputs', () => {
       value: {
         rules: [
           {
-            validate: 'isNumeric',
+            validate: 'numeric',
             message: 'The value must be a number'
           }
         ]
@@ -33,7 +33,7 @@ describe('numeric inputs', () => {
 			value: {
 				rules: [
 					{
-						validate: 'isNumeric',
+						validate: 'numeric',
 						message: 'The value must be a number'
 					}
 				]
@@ -50,7 +50,7 @@ describe('numeric inputs', () => {
 			value: {
 				rules: [
 					{
-						validate: 'isNumeric',
+						validate: 'numeric',
 						message: 'The value must be a number'
 					}
 				]
@@ -67,7 +67,7 @@ describe('numeric inputs', () => {
 			value: {
 				rules: [
 					{
-						validate: 'isNumeric',
+						validate: 'numeric',
 						message: 'The value must be a number'
 					}
 				]
@@ -85,7 +85,7 @@ describe('numeric inputs', () => {
 			value: {
 				rules: [
 					{
-						validate: 'isLessThan|42',
+						validate: 'lessThan|42',
 						message: 'The value must be less than 42'
 					}
 				]
@@ -103,7 +103,7 @@ describe('numeric inputs', () => {
 			value: {
 				rules: [
 					{
-						validate: 'isLessThan|42',
+						validate: 'lessThan|42',
 						message: 'The value must be less than 42'
 					}
 				]
@@ -121,7 +121,7 @@ describe('numeric inputs', () => {
 			value: {
 				rules: [
 					{
-						validate: 'isGreaterThan|42',
+						validate: 'greaterThan|42',
 						message: 'The value must be greater than 42'
 					}
 				]
@@ -139,7 +139,7 @@ describe('numeric inputs', () => {
 			value: {
 				rules: [
 					{
-						validate: 'isGreaterThan|42',
+						validate: 'greaterThan|42',
 						message: 'The value must be greater than 42'
 					}
 				]
