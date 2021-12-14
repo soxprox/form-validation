@@ -1,4 +1,7 @@
 export const validationRules = {
+  string(value) {
+    return typeof value === 'string';
+  },
 	notEmpty(value) {
 		return !!value.trim();
 	},
@@ -106,5 +109,5 @@ export const validationRules = {
 	},
 	greaterThan(value, args) {
 		return value > args[1];
-	}
+  }
 };

@@ -49,35 +49,28 @@ If the data passed the rules, then the array will be empty
 If the length of the array is `0`, all the rules passed.
 
 ## Supported rules
+
+### **string**
+Checks that the value provided is of type string
 ### **empty**
-
-Checks that the the data property evaluates to false.
-
-- String must be zero length (uses trim)
-- Arrays must be zero length
-
-Note: Currently this does not work for objects. Evan an empty object `{}` will evaluate to true. This will be fixed in a later versions 
+Checks that the value is not empty or null
 
 ### **notEmpty**
-
-Checks that the data property evaluates to true
-
-- String must not be zero length (uses trim)
-- Arrays must have at least one element
-- If the data property is an object (even an empty object) it will return no error. This will be fixed in a later version 
+Checks that the value is empty or null
 
 ### **minLength|`int`**
-
+Checks the string length is greater or equal to the param provided
 ### **maxLength|`int`**
+Checks the string length is less or equal to the param provided
 
 ### **length|`int`**
-
-### **lengthBetween|`int`|`int`**
-
+Checks the string length matches the param provided
+### **lengthBetween|`<min>int`|`<max>int`**
+Checks the string length is between the two params provided
 ### **equal|`string`**
-
+Check that the value provided is equal to the param
 ### **notEqual|`string`**
-
+Check that the value provided is not equal to the param
 ### **inArray|`value`,`value`,`value`....**
 The array to validate against will be built up from the values supplied. Each value should be separated by a `,` (comma).
 

@@ -59,6 +59,42 @@ describe('text inputs', () => {
 		const response = await validate(data, dataRules);
 		expect(response.name[0]).toBe('The name field should be empty');
   });
+
+	it('it returns an error if empty', async () => {
+    const data = {
+      name: ''
+    };
+    const dataRules = {
+      name: {
+        rules: [
+          {
+            validate: 'notEmpty',
+            message: 'The name field is required'
+          }
+        ]
+      }
+    };
+    const response = await validate(data, dataRules);
+    expect(response.name[0]).toBe('The name field is required');
+  });
+
+  it('it returns no errors if it has a value', async () => {
+		const data = {
+			name: 'test data'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'notEmpty',
+						message: 'The name field is required'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
   
   it('it tests multiple fields', async () => {
 		const data = {
@@ -583,6 +619,42 @@ describe('text inputs', () => {
 					{
 						validate: 'email',
 						message: 'Name should be a valid Email Address'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
+
+	it('it returns an error if not a string', async () => {
+		const data = {
+			name: 42
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'string',
+						message: 'Name should be a string'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('Name should be a string');
+	});
+
+	it('it returns no errors if it is a string', async () => {
+		const data = {
+			name: 'test data'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'string',
+						message: 'Name should be a string'
 					}
 				]
 			}
