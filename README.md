@@ -10,7 +10,7 @@ npm install @soxprox/form-validation
 ## Getting started
 
 ```
-import validationRules from "@soxprox/form-validation"
+import { validate } from "@soxprox/form-validation"
 
 const data = {
   password: "1234567"
