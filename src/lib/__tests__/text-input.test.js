@@ -555,5 +555,40 @@ describe('text inputs', () => {
 		const response = await validate(data, dataRules);
 		expect(response.name.length).toBe(0);
 	});
+	it('it returns an error if value is not a valid email', async () => {
+		const data = {
+			name: 'invalid@email'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'isValidEmail',
+						message: 'Name should be a valid Email Address'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('Name should be a valid Email Address');
+	});
+
+	it('it returns no error if value is a valid Email', async () => {
+		const data = {
+			name: 'testemailisvalid@soxprox.com'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'isValidEmail',
+						message: 'Name should be a valid Email Address'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
 
 })

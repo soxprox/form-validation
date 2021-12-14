@@ -116,3 +116,12 @@ Both of the following urls would be valid
 
 * https://www.google.com
 * https://www.google.com?key=value&key2=value2
+
+### **isValidEmail**
+Checks that the email address is in a valid format. It does more than just check that a `@` symbol exists.
+
+The following `would not` validate as a correct email address
+
+```
+name@domain
+```
