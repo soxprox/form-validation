@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.6.0...v1.7.0) (2021-12-14)
+
+
+### Features
+
+* add rule isValidEmail ([f66a3aa](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/f66a3aab0e72506697b8afeaf552bd0d6568f3ac))
+* add rule isValidURL ([62bd1bb](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/62bd1bbe14f6ec80f8b775ebdce59e25198acc37))
+* add rule string ([56cc485](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/56cc48566567be7c871a33cc946eff777221484c))
+* add rules for checking numbers ([d8b8e63](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/d8b8e63356ce109ee2a8804b314ff0723652e2d8))
+* update rule names to be consistant ([1d7fbc2](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/1d7fbc2b8b5e84c3dfd9ad2afa02cb53ce8810a2))
+
 ## [1.6.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.5.0...v1.6.0) (2021-12-13)
 
 
