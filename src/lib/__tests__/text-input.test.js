@@ -520,4 +520,40 @@ describe('text inputs', () => {
 		expect(response.name.length).toBe(0);
 	});
 
+	it('it returns an error if value is not a valid URL', async () => {
+		const data = {
+			name: "http://notvalid"
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'isValidURL',
+						message: 'Name should be a valid URL'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('Name should be a valid URL');
+	});
+
+	it('it returns no error if value is a valid URL', async () => {
+		const data = {
+			name: 'https://www.google.com?key=value&key2=value2'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'isValidURL',
+						message: 'Name should be a valid URL'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
+
 })

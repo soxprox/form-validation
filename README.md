@@ -105,3 +105,14 @@ Returns an error if the value does not include all the words in the array
 
 ### **doesNotIncludeWords|`string`,`string`...**
 Return an error if the value includes any of the words in the array
+
+### **isValidURL**
+Checks that the URL is valid using the following regex
+
+```
+^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$
+```
+Both of the following urls would be valid
+
+* https://www.google.com
+* https://www.google.com?key=value&key2=value2

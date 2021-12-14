@@ -86,5 +86,9 @@ export const validationRules = {
       }
     });
     return !errors;
+  },
+  isValidURL(value, args) {
+    const regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+    return regex.test(value)
   }
 }
