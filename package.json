@@ -1,6 +1,6 @@
 {
   "name": "@soxprox/form-validation",
-  "version": "1.5.0",
+  "version": "1.7.6",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -40,5 +40,9 @@
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.soxprox.com/soxprox/packages/form-validation"
+  }
 }

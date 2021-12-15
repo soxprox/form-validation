@@ -10,7 +10,7 @@ npm install @soxprox/form-validation
 ## Getting started
 
 ```
-import validationRules from "@soxprox/form-validation"
+import { validate } from "@soxprox/form-validation"
 
 const data = {
   password: "1234567"
@@ -48,36 +48,29 @@ If the data passed the rules, then the array will be empty
 ```
 If the length of the array is `0`, all the rules passed.
 
-## Supported rules are
+## Supported rules
+
+### **string**
+Checks that the value provided is of type string
 ### **empty**
-
-Checks that the the data property evaluates to false.
-
-- String must be zero length (uses trim)
-- Arrays must be zero length
-
-Note: Currently this does not work for objects. Evan an empty object `{}` will evaluate to true. This will be fixed in a later versions 
+Checks that the value is not empty or null
 
 ### **notEmpty**
-
-Checks that the data property evaluates to true
-
-- String must not be zero length (uses trim)
-- Arrays must have at least one element
-- If the data property is an object (even an empty object) it will return no error. This will be fixed in a later version 
+Checks that the value is empty or null
 
 ### **minLength|`int`**
-
+Checks the string length is greater or equal to the param provided
 ### **maxLength|`int`**
+Checks the string length is less or equal to the param provided
 
 ### **length|`int`**
-
-### **lengthBetween|`int`|`int`**
-
+Checks the string length matches the param provided
+### **lengthBetween|`<min>int`|`<max>int`**
+Checks the string length is between the two params provided
 ### **equal|`string`**
-
+Check that the value provided is equal to the param
 ### **notEqual|`string`**
-
+Check that the value provided is not equal to the param
 ### **inArray|`value`,`value`,`value`....**
 The array to validate against will be built up from the values supplied. Each value should be separated by a `,` (comma).
 
@@ -105,3 +98,97 @@ Returns an error if the value does not include all the words in the array
 
 ### **doesNotIncludeWords|`string`,`string`...**
 Return an error if the value includes any of the words in the array
+
+## URL and Email validation
+
+### **url**
+Checks that the URL is valid using the following regex
+
+```
+^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$
+```
+Both of the following urls would be valid
+
+* https://www.google.com
+* https://www.google.com?key=value&key2=value2
+
+### **email**
+Checks that the email address is in a valid format. It does more than just check that a `@` symbol exists.
+
+The following `would not` validate as a correct email address
+
+```
+name@domain
+```
+### **number**
+Checks that the value passed in is a valid number
+
+### **lessThan|`number`**
+Checks that the value is less than the number provided in the parameter
+
+### **greaterThan|`number`**
+Checks that the value is greater than the number provided in the parameter
+
+## Example of using the library in svelte
+
+```
+<script>
+  import { validate } from '../index.js';
+  let name='';
+  let email='';
+  let errors = {
+    name: [],
+    email: [],
+  }
+
+  const dataRules = {
+      name: {
+        rules: [
+          {
+            validate: 'minLength|3',
+            message: 'Name must be at least 3 characters'
+          }
+        ]
+      },
+      email: {
+        rules: [
+          {
+            validate: 'email',
+            message: 'Email should be valid'
+          }
+        ]
+      }
+    };
+
+  let onKeyUp = async () => {
+    errors = await validate({ email }, dataRules);
+  }
+
+  let onClick = async () => {
+    errors = await validate({ email, name }, dataRules);
+  }
+</script>
+<h1>Sandpit Test Form</h1>
+
+<div>
+  <label for="name">Name</label>
+  <input type="text" id="name" bind:value={name}>
+  {#if errors.name}
+  {#each errors.name as error}
+    <div>{error}</div>
+  {/each}
+  {/if}
+</div>
+<div>
+  <label for="email">Email</label>
+  <input type="text" id="email" on:keyup={onKeyUp} bind:value={email}>
+  {#if errors.email}
+  {#each errors.email as error}
+    <div>{error}</div>
+  {/each}
+  {/if}
+</div>
+<div>
+  <button on:click={onClick}>Submit</button>
+</div>
+```

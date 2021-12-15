@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.6](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.5...v1.7.6) (2021-12-15)
+
+### [1.7.5](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.4...v1.7.5) (2021-12-15)
+
+### [1.7.4](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.3...v1.7.4) (2021-12-15)
+
+### [1.7.3](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.2...v1.7.3) (2021-12-15)
+
+### [1.7.2](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.1...v1.7.2) (2021-12-14)
+
+### [1.7.1](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.0...v1.7.1) (2021-12-14)
+
+
+### Bug Fixes
+
+* add more frontend tests ([9671de9](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/9671de9ae65cc481c654dcd1bcb94eb902c933b8))
+
+## [1.7.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.6.0...v1.7.0) (2021-12-14)
+
+
+### Features
+
+* add rule isValidEmail ([f66a3aa](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/f66a3aab0e72506697b8afeaf552bd0d6568f3ac))
+* add rule isValidURL ([62bd1bb](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/62bd1bbe14f6ec80f8b775ebdce59e25198acc37))
+* add rule string ([56cc485](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/56cc48566567be7c871a33cc946eff777221484c))
+* add rules for checking numbers ([d8b8e63](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/d8b8e63356ce109ee2a8804b314ff0723652e2d8))
+* update rule names to be consistant ([1d7fbc2](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/1d7fbc2b8b5e84c3dfd9ad2afa02cb53ce8810a2))
+
+## [1.6.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.5.0...v1.6.0) (2021-12-13)
+
+
+### Features
+
+* add repository link to package.json ([047f5ad](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/047f5ad403a220d311a766a510eab93d58b55f6f))
+
 ## [1.5.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.4.1...v1.5.0) (2021-12-13)
 
 
