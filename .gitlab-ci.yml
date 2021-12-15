@@ -22,7 +22,6 @@ publish:
     - npm install
     - npm run package
     - cd package
-    - npm set "//registry.npmjs.org/:_authToken" $NPM_PASSWORD
-    - npm publish --access public
+    - NPM_TOKEN=$NPM_PASSWORD npm publish --access public
     - git push https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/soxprox/form-validation.git
     - git push https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/soxprox/form-validation.git --tags
