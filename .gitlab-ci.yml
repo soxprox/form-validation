@@ -20,10 +20,9 @@ publish:
   stage: publish
   script:
     - npm install
-    - npm i -g npm-cli-login
     - npm run package
     - cd package
-    - NPM_USER=$NPM_USERNAME NPM_PASS=$NPM_PASSWORD NPM_EMAIL=$NPM_EMAIL npm-cli-login
+    - npm set "//registry.npmjs.org/:_authToken" $NPM_PASSWORD
     - npm publish --access public
     - git push https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/soxprox/form-validation.git
     - git push https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/soxprox/form-validation.git --tags
