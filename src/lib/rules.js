@@ -1,4 +1,7 @@
 export const validationRules = {
+	alpha(value) {
+		return /^[a-zA-Z]+$/.test(value);
+	},
   string(value) {
     return typeof value === 'string';
   },
@@ -109,5 +112,11 @@ export const validationRules = {
 	},
 	greaterThan(value, args) {
 		return value > args[1];
-  }
+	},
+	integer(value) {
+		return Number.isInteger(value);
+	},
+	float(value) {
+		return Number(value) === value && value % 1 !== 0;
+	}
 };

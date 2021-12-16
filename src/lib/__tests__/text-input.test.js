@@ -663,4 +663,40 @@ describe('text inputs', () => {
 		expect(response.name.length).toBe(0);
 	});
 
+	it('it returns an error if not a alpha characters', async () => {
+		const data = {
+			name: "this string 42 contains spaces and numbers"
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'alpha',
+						message: 'Name should contain only alphabetic characters'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name[0]).toBe('Name should contain only alphabetic characters');
+	});
+
+	it('it returns no errors if it is a string', async () => {
+		const data = {
+			name: 'testdata'
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'alpha',
+						message: 'Name should contain only alphabetic characters'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.name.length).toBe(0);
+	});
+
 })

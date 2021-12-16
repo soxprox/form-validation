@@ -50,6 +50,9 @@ If the length of the array is `0`, all the rules passed.
 
 ## Supported rules
 
+### **alpha**
+Checks that the value provide contains only characters a-zA-Z
+
 ### **string**
 Checks that the value provided is of type string
 ### **empty**
@@ -122,6 +125,12 @@ name@domain
 ```
 ### **number**
 Checks that the value passed in is a valid number
+
+### **integer**
+Checks that the value passed is an integer
+
+### **float**
+Checks that the value passed is a float
 
 ### **lessThan|`number`**
 Checks that the value is less than the number provided in the parameter
