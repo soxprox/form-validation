@@ -184,5 +184,40 @@ describe('numeric inputs', () => {
 		const response = await validate(data, dataRules);
 		expect(response.value.length).toBe(0);
 	});
+	it('it returns an error if value is not a float', async () => {
+		const data = {
+			value: 42
+		};
+		const dataRules = {
+			value: {
+				rules: [
+					{
+						validate: 'float',
+						message: 'The value must be a float'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.value[0]).toBe('The value must be a float');
+	});
+
+	it('it returns no errors if the value is a float', async () => {
+		const data = {
+			value: 42.56
+		};
+		const dataRules = {
+			value: {
+				rules: [
+					{
+						validate: 'float',
+						message: 'The value must be a float'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.value.length).toBe(0);
+	});
 
 })

@@ -115,5 +115,8 @@ export const validationRules = {
 	},
 	integer(value) {
 		return Number.isInteger(value);
+	},
+	float(value) {
+		return Number(value) === value && value % 1 !== 0;
 	}
 };

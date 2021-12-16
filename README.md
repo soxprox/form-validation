@@ -126,6 +126,12 @@ name@domain
 ### **number**
 Checks that the value passed in is a valid number
 
+### **integer**
+Checks that the value passed is an integer
+
+### **float**
+Checks that the value passed is a float
+
 ### **lessThan|`number`**
 Checks that the value is less than the number provided in the parameter
 
