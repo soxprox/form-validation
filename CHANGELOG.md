@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.10...v1.8.0) (2021-12-16)
+
+
+### Features
+
+* add rule alpha ([8555da6](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/8555da64c2b4baa36606c36d4634095aee981c11))
+* add rule float ([ce19625](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/ce196252e2ec59c9c133da78473ada44d58db3d6))
+* add rule integer ([8a30da1](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/8a30da1cdfdf90e9bd721d8bf8a741b06bde8c98))
+
+
+### Bug Fixes
+
+* .gitlab-ci.yml ([d3ada3b](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/d3ada3bbedca0537f0b13587527c8c5b9142147e))
+
 ### [1.7.10](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.9...v1.7.10) (2021-12-16)
 
 ### [1.7.9](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.8...v1.7.9) (2021-12-16)
