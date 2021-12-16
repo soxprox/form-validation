@@ -112,5 +112,8 @@ export const validationRules = {
 	},
 	greaterThan(value, args) {
 		return value > args[1];
-  }
+	},
+	integer(value) {
+		return Number.isInteger(value);
+	}
 };

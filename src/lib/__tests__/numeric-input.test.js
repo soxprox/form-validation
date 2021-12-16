@@ -149,4 +149,40 @@ describe('numeric inputs', () => {
 		expect(response.value.length).toBe(0);
 	});
 
+	it('it returns an error if value is not an integer', async () => {
+		const data = {
+			value: 42.5
+		};
+		const dataRules = {
+			value: {
+				rules: [
+					{
+						validate: 'integer',
+						message: 'The value must be an integer'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.value[0]).toBe('The value must be an integer');
+	});
+
+	it('it returns no errors if the value is an integer', async () => {
+		const data = {
+			value: 42
+		};
+		const dataRules = {
+			value: {
+				rules: [
+					{
+						validate: 'integer',
+						message: 'The value must be an integer'
+					}
+				]
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.value.length).toBe(0);
+	});
+
 })
