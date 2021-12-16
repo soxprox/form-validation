@@ -1,6 +1,6 @@
 {
   "name": "@soxprox/form-validation",
-  "version": "1.7.6",
+  "version": "1.7.7",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
