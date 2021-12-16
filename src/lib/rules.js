@@ -1,4 +1,7 @@
 export const validationRules = {
+	alpha(value) {
+		return /^[a-zA-Z]+$/.test(value);
+	},
   string(value) {
     return typeof value === 'string';
   },
