@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.8.0...v1.9.0) (2021-12-21)
+
+
+### Features
+
+* auto update form with errors and add error count ([492f053](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/492f053c51e6a74297121197a587788821674c1e))
+
 ## [1.8.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.7.10...v1.8.0) (2021-12-16)
 
 
