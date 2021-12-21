@@ -16,4 +16,12 @@ describe('front end testing', () => {
 			expect(screen.getByText('Email should be valid')).toBeInTheDocument();
 		});
 	});
+	it('Updates the form field with an error message', async () => { 
+		render(SandpitForm);
+		const input = screen.getByLabelText('Age');
+		await userEvent.type(input, '16');
+		await waitFor(() => {
+			expect(screen.getByText('Minimum age 18')).toBeInTheDocument();
+		});
+	})
 });

@@ -7,6 +7,28 @@ import { render, screen } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 import { validate } from '../index.js';
 describe('text inputs', () => {
+	it('it returns the number of errors found', async () => {
+		const data = {
+			name: ''
+		};
+		const dataRules = {
+			name: {
+				rules: [
+					{
+						validate: 'notEmpty',
+						message: 'The name field is required'
+					},
+					{
+						validate: 'minLength|8',
+						message: 'The name field should be at least 8 characters in length'
+					},
+				],
+			}
+		};
+		const response = await validate(data, dataRules);
+		expect(response.spErrorCount).toBe(2);
+		expect(response.spErrors).toBe(true);
+	});
   it('it returns an error if empty', async () => {
     const data = {
       name: ''

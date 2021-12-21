@@ -2,6 +2,7 @@
   import { validate } from '../index.js';
   let name='';
   let email='';
+  let age='';
   let errors = {
     name: [],
     email: [],
@@ -23,11 +24,27 @@
             message: 'Email should be valid'
           }
         ]
+      },
+      age: {
+        rules: [
+          {
+            validate: 'greaterThan|17',
+            message: 'Minimum age 18'
+          }
+         
+        ],
+        updateDom: true,
+        fieldId: 'age',
+        displayAllErrors: false
       }
     };
 
-  let onKeyUp = async () => {
+  let emailChange = async () => {
     errors = await validate({ email }, dataRules);
+  }
+
+  let ageChange = async () => {
+    await validate({ age }, dataRules);
   }
 
   let onClick = async () => {
@@ -47,12 +64,16 @@
 </div>
 <div>
   <label for="email">Email</label>
-  <input type="text" id="email" on:keyup={onKeyUp} bind:value={email}>
+  <input type="text" id="email" on:keyup={emailChange} bind:value={email}>
   {#if errors.email}
   {#each errors.email as error}
     <div>{error}</div>
   {/each}
   {/if}
+</div>
+<div>
+  <label for="age">Age</label>
+  <input type="number" id="age" on:keyup={ageChange} bind:value={age}>
 </div>
 <div>
   <button on:click={onClick}>Submit</button>

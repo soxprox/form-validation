@@ -1,7 +1,6 @@
 # form-validation
 
-This library provides an easy way to validate your javascript applications.
-
+This library provides an easy way to validate your javascript applications data. There is also the option to automatically update forms with generated error messages.
 
 ## Installation
 
@@ -22,28 +21,97 @@ const dataRules = {
       {
         validate: 'minLength|8',
         message: 'The password should be a minumum of 8 Characters long'
-      }]
+      }],
+        updateDom: true,
+        fieldId: 'password',
+        displayAllErrors: true
   }
 }
 
 const result = validationRules(data, dataRules)
 ```
+## How to use
+To validate your data import 'validate' from the library
 
-The `result` is an object containing the properties passed in `data` with the value of each property being an array.
+```
+import { validate } from "@soxprox/form-validation"
+```
+
+`validate` takes 2 arguments
+
+1. An data object containing the data to be validated
+2. A rules object containing rules and instructions on how to validate the data and display an errors
+
+The rules object should have property names that match the names of the properties in the data object.
+
+Each rules property requires one property of type array called `rules`. The rules array should contain one object for each validation that is to be applied
+
+Each validation object requires 2 properties.
+
+1. Validation Rule
+2. Error message if the rule fails the verification
+
+``` js
+let dataRules = {
+  age: {
+    rules: [
+      {
+        validate: 'greaterThan|17',
+        message: 'You need to be at least 18 years old'
+      },
+      {
+        validate: 'lessThan|100',
+        message: 'You need to be less than 100 years old'
+      }
+    ]
+  }
+}
+```
+
+You have a choice to simply validate the data and return any errors as an array that you can handle and display yourself, or you can have the library populate the form with errors under each relevant field.
+
+### Example
+Given the following data
+
+``` js
+let age = 101;
+let name = 'Simon'
+```
+
+You have a few options for validation.
+
+1. Validate all fields
+
+``` js
+let result = validate({ age, name }, dataRules)
+```
+
+2. Validate one or more fields
+
+``` js
+let result = validate({ age }, dataRules)
+```
+
+> The number of data rule does not need to match the number of data elements, only that a rule exists for those data elements that are provided.
+
+
+
+
+The `result` is an object containing the properties passed in `data` with the value of each property being an array or string error messages.
 
 In the example above the result would be 
 
 ```
 {
-  password: ['The password should be a minumum of 8 Characters long']
+  age: ['You need to be less than 100 years old']
 }
 ```
 
-If the data passed the rules, then the array will be empty
+If the data passed all the rules, then the property array will be empty
 
 ```
 {
-  password: []
+  age: []
 }
 ```
 If the length of the array is `0`, all the rules passed.

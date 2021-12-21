@@ -1,7 +1,9 @@
 import { validationRules } from './rules';
+import { updateDocument } from './updatedocument';
 export const validate = (data, dataRules) => {
   return new Promise((resolve, reject) => {
-    const errors = {};
+    let errors = {};
+    let errorCount = 0;
     try {
       for (const field in dataRules) {
         //Check if data has field
@@ -17,8 +19,16 @@ export const validate = (data, dataRules) => {
           const funcArgs = rules[rule]['validate'].split('|');
           const result = validationRules[funcArgs[0]](data[field], funcArgs);
           if (!result) {
+            errorCount += 1;
             errors[field].push(rules[rule]['message']);
           }
+        }
+        if (dataRules[field]['updateDom']) {
+          updateDocument(
+						dataRules[field]['fieldId'] || field,
+						errors[field],
+						dataRules[field]['displayAllErrors']
+					);
         }
 
       }
@@ -26,6 +36,13 @@ export const validate = (data, dataRules) => {
       if (error !== 'TypeError: value is undefined') {
         return reject('Error: ' + error);
       }
+    }
+    if (errorCount > 0) {
+      errors['spErrorCount'] = errorCount;
+      errors['spErrors'] = true
+    } else {
+      errors['spErrorCount'] = 0;
+			errors['spErrors'] = false;
     }
     return resolve(errors);
   })
