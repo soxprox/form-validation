@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.9.0...v1.9.1) (2021-12-21)
+
+
+### Bug Fixes
+
+* add missing error class ([d9981d6](https://gitlab.soxprox.com/soxprox/packages/form-validation/commit/d9981d60c0030fddebec53a3f815bc7802e4e27b))
+
 ## [1.9.0](https://gitlab.soxprox.com/soxprox/packages/form-validation/compare/v1.8.0...v1.9.0) (2021-12-21)
 
 
