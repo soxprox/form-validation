@@ -29,6 +29,7 @@ export const updateDocument = (id, errors, displayAll = false) => {
 
   const errorElement = document.createElement("div");
   errorElement.id = "soxprox-" + id + "-error-message";
+  errorElement.classList.add('soxprox-error');
   if (!displayAll) {
     errorElement.innerHTML = errors[0];
   } else {
